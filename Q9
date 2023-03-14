@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    
+    int matriz[2][2] = {{1,2}, {3,4}};
+    int rotacao[2][2] = {{0,0}, {0,0}};
+    
+    for(int i=0; i<2; i++) {
+        for(int j=0; j<2; j++) {
+            rotacao[j][1-i] = matriz[i][j];
+        }
+    }
+    
+    printf("Matriz de rotação de 90 graus:\n");
+    for(int i=0; i<2; i++) {
+        for(int j=0; j<2; j++) {
+            printf("%d ", rotacao[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
