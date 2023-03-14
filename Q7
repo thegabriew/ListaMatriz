@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    
+    int matriz[3][3] = {{2,0,1}, {3,4,-2}, {8,9,6}};
+    int diagonal[3][3] = {{0,0,0}, {0,0,0}, {0,0,0}};
+    
+    for(int i=0; i<3; i++) {
+        diagonal[i][i] = matriz[i][i];
+    }
+    
+    printf("Matriz diagonal:\n");
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            printf("%d ", diagonal[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
