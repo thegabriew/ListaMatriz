@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+
+void cofator(int matriz[2][2], int cof[2][2]) {
+    cof[0][0] = matriz[1][1];
+    cof[0][1] = -matriz[1][0];
+    cof[1][0] = -matriz[0][1];
+    cof[1][1] = matriz[0][0];
+}
+
+int main() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    
+    int matriz[2][2] = {{2,3}, {1,4}};
+    int cof[2][2];
+    
+    cofator(matriz, cof);
+    
+    printf("Matriz cofatora:\n");
+    for(int i=0; i<2; i++) {
+        for(int j=0; j<2; j++) {
+            printf("%d ", cof[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
